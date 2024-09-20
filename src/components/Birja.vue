@@ -63,10 +63,10 @@ function handleCardClick(e) {
         />
       </div>
     </div>
-    <div class="pt-2.5 bg-blue-900 grow rounded-t-3xl blue-shadow mt-5">
-      <div class="flex flex-col h-full pt-14 bg-dark-200 rounded-t-3xl">
+    <div class="pt-2.5 bg-blue-900 grow rounded-t-3xl blue-shadow ">
+      <div class="flex flex-col h-full pt-4 bg-dark-200 rounded-t-3xl">
         <div
-          class="flex items-center justify-center gap-3 mb-32 text-4xl font-semibold text-white"
+          class="flex items-center justify-center gap-3 font-semibold text-white mb-14 tex4t-4xl"
         >
           <img src="@/assets/img/coin-vpn.png" class="w-12" />
           <span>156 987</span>
@@ -74,7 +74,7 @@ function handleCardClick(e) {
 
         <div class="relative flex items-end justify-center grow">
           <div
-            class="absolute z-10 rounded-full w-80 h-80 circle-outer -top-10 bg-coin"
+            class="absolute z-10 rounded-full w-60 h-60 circle-outer -top-10 bg-coin"
             @click="handleCardClick"
           >
             <div class="w-full h-full rounded-full circle-out">

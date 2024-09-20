@@ -13,15 +13,15 @@ const changeTab = (i) => {
 };
 </script>
 <template>
-  <div class="flex flex-col main-bg h-screen border">
-    <div class="h-con">
-      <Birja />
+  <div class="flex flex-col h-screen border main-bg">
+    <div class="min-h-con">
+      <Birja  class=""/>
     </div>
     <div
-      class="h-25 bg-blue-600 flex items-center justify-between text-5xl px-5"
+      class="flex items-center justify-between px-5 text-5xl bg-blue-600 h-25"
     >
       <div
-        class="flex flex-col  items-center text-white"
+        class="flex flex-col items-center text-white"
        
         @click="changeTab(0)"
       >
@@ -29,7 +29,7 @@ const changeTab = (i) => {
         <span class="text-xl">Биржа</span>
       </div>
       <div
-        class="flex flex-col  items-center text-white"
+        class="flex flex-col items-center text-white"
         
         @click="changeTab(1)"
       >
@@ -38,7 +38,7 @@ const changeTab = (i) => {
       </div>
 
       <div
-        class="flex flex-col  items-center text-white"
+        class="flex flex-col items-center text-white"
       
         @click="changeTab(2)"
       >
@@ -46,7 +46,7 @@ const changeTab = (i) => {
         <span class="text-xl">Задания</span>
       </div>
       <div
-        class="flex flex-col  items-center text-white"
+        class="flex flex-col items-center text-white"
        
         @click="changeTab(3)"
       >
@@ -59,6 +59,9 @@ const changeTab = (i) => {
 <style scoped>
 .h-con {
   height: calc(100vh - 100px);
+}
+.min-h-con {
+  min-height: calc(100vh - 100px);
 }
 .tr-03{
   transition: all .3s ease;
