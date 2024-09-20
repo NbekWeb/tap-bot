@@ -1,9 +1,9 @@
 <script setup>
 import { ref } from "vue";
 import mainCharacter from "../assets/img/stars.png";
-// const mainCharacter = "../assets/img/rocket.png"; // Replace with the actual path to your image
+
 const points = ref(0);
-const pointsToAdd = 10; // Define this according to your needs
+const pointsToAdd = 10; 
 const clicks = ref([]);
 
 function handleCardClick(e) {
