@@ -1,6 +1,8 @@
 <script setup>
 import Birja from "@/components/Birja.vue";
 import Friends from "@/components/Friends.vue";
+import Friends1 from "@/components/Friends1.vue";
+import Friends2 from "@/components/Friends2.vue";
 import Rating from "@/components/Rating.vue";
 import Tasks from "@/components/Tasks.vue";
 
@@ -12,9 +14,18 @@ import TasksIcon from "./components/icons/tasks.vue";
 import { ref } from "vue";
 
 const selected = ref(0);
+const addSelect = ref(0);
+const changeTab = (i, j = 0) => {
+  if (j == 0) {
+    addSelect.value = 0;
+  }
 
-const changeTab = (i) => {
-  selected.value = i;
+  selected.value = i + addSelect.value;
+
+  if (j != 0) {
+    addSelect.value++;
+    addSelect.value = addSelect.value % 3;
+  }
 };
 </script>
 <template>
@@ -22,8 +33,10 @@ const changeTab = (i) => {
     <div class="overflow-y-auto min-h-con">
       <Birja class="" v-if="selected == 0" />
       <friends v-else-if="selected == 1" />
-      <tasks v-else-if="selected == 2" />
-      <rating v-else-if="selected == 3" />
+      <friends1 v-else-if="selected == 2" />
+      <friends2 v-else-if="selected == 3" />
+      <tasks v-else-if="selected == 4" />
+      <rating v-else-if="selected == 5" />
     </div>
     <div
       class="flex items-center justify-between px-5 text-4xl bg-blue-600 min-h-25"
@@ -38,8 +51,12 @@ const changeTab = (i) => {
       </div>
       <div
         class="flex flex-col items-center gap-1 text-white"
-        @click="changeTab(1)"
-        :class="selected !== 1 ? 'opacity-25' : 'opacity-100'"
+        @click="changeTab(1, 1)"
+        :class="
+          selected !== 1 && selected != 2 && selected != 3
+            ? 'opacity-25'
+            : 'opacity-100'
+        "
       >
         <friends-icon class="tr-03" />
         <span class="text-lg">Друзья</span>
@@ -48,7 +65,7 @@ const changeTab = (i) => {
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(2)"
-        :class="selected !== 2 ? 'opacity-25' : 'opacity-100'"
+        :class="selected !== 4 ? 'opacity-25' : 'opacity-100'"
       >
         <tasks-icon class="tr-03" />
         <span class="text-lg">Задания</span>
@@ -56,7 +73,7 @@ const changeTab = (i) => {
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(3)"
-        :class="selected !== 3 ? 'opacity-25' : 'opacity-100'"
+        :class="selected !== 5 ? 'opacity-25' : 'opacity-100'"
       >
         <rate-icon class="tr-03" />
         <span class="text-lg">Рейтинг</span>
