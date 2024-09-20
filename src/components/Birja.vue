@@ -26,7 +26,7 @@ function handleCardClick(e) {
   const currentTime = Date.now();
   if (lastClickTime) {
     const timeDiff = currentTime - lastClickTime;
-    clickSpeed.value =Math.min(Math.max(1, Math.floor(1000 / timeDiff)),6) ;
+    clickSpeed.value =Math.min(Math.max(1, Math.floor(1000 / timeDiff)),10) ;
   }
   lastClickTime = currentTime;
 
