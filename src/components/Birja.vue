@@ -91,13 +91,13 @@ function handleCardClick(e) {
             class="absolute top-0 left-0 w-screen -z-2"
           />
           <div
-            class="flex justify-between w-full px-5 pb-5 text-2xl font-semibold text-white"
+            class="flex justify-between w-full px-5 pb-5 text-xl font-semibold text-white"
           >
-            <div class="flex gap-2">
+            <div class="flex items-center gap-2">
               <img src="@/assets/img/thunder.png" class="w-8 h-auto" />
               <span> 2500/2500 </span>
             </div>
-            <div class="flex gap-2">
+            <div class="flex items-center gap-2">
               <img src="@/assets/img/rocket.png" class="w-8 h-auto" />
               <span> Ускорить </span>
             </div>
