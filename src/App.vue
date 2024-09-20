@@ -64,7 +64,7 @@ const changeTab = (i, j = 0) => {
 
       <div
         class="flex flex-col items-center gap-1 text-white"
-        @click="changeTab(2)"
+        @click="changeTab(4)"
         :class="selected !== 4 ? 'opacity-25' : 'opacity-100'"
       >
         <tasks-icon class="tr-03" />
@@ -72,7 +72,7 @@ const changeTab = (i, j = 0) => {
       </div>
       <div
         class="flex flex-col items-center gap-1 text-white"
-        @click="changeTab(3)"
+        @click="changeTab(5)"
         :class="selected !== 5 ? 'opacity-25' : 'opacity-100'"
       >
         <rate-icon class="tr-03" />
