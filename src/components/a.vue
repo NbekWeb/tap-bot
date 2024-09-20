@@ -1,12 +1,10 @@
 <script setup>
 import { ref } from "vue";
-import mainCharacter from "../assets/img/star.png";
+import mainCharacter from "../assets/img/stars.png";
 
 const points = ref(0);
 const pointsToAdd = 10;
 const clicks = ref([]);
-const clickSpeed = ref(0);
-let lastClickTime = null;
 
 function handleCardClick(e) {
   const card = e.currentTarget;
@@ -14,7 +12,9 @@ function handleCardClick(e) {
   const x = e.clientX - rect.left - rect.width / 2;
   const y = e.clientY - rect.top - rect.height / 2;
 
-  card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${x / 10}deg)`;
+  card.style.transform = `perspective(1000px) rotateX(${-y / 10}deg) rotateY(${
+    x / 10
+  }deg)`;
 
   setTimeout(() => {
     card.style.transform = "";
@@ -23,42 +23,26 @@ function handleCardClick(e) {
   points.value += pointsToAdd;
   clicks.value.push({ id: Date.now(), x: e.pageX, y: e.pageY });
 
-  const currentTime = Date.now();
-  if (lastClickTime) {
-    const timeDiff = currentTime - lastClickTime;
-    clickSpeed.value =Math.min(Math.max(1, Math.floor(1000 / timeDiff)),6) ;
-  }
-  lastClickTime = currentTime;
+  const img = document.createElement("img");
+  img.src = mainCharacter;
+  img.style.position = "absolute";
+  img.style.left = `${e.pageX - 60}px`;
+  img.style.top = `${e.pageY - 25}px`;
+  img.style.width = "120px";
+  img.style.height = "auto";
+  img.style.transition = "all 1s ease-in-out";
+  img.style.opacity = "1";
+  img.style.pointerEvents = "none";
+  img.style.zIndex = "100";
+  document.body.appendChild(img);
 
-  displayClickCharacters(e.pageX, e.pageY, clickSpeed.value);
-}
-
-function displayClickCharacters(x, y, speed) {
-  const images = Array.from({ length: speed }, (_, index) => {
-    const img = document.createElement("img");
-    img.src = mainCharacter;
-    img.style.position = "absolute";
-    img.style.left = `${x + (index - Math.floor(speed / 2)) * 20}px`;
-    img.style.top = `${y - 25}px`;
-    img.style.width = "20px"; 
-    img.style.height = "auto";
-    img.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
-    img.style.opacity = "1";
-    img.style.pointerEvents = "none";
-    img.style.zIndex = "100";
-    document.body.appendChild(img);
-
-    // Animate and remove the image after 1 second
-    setTimeout(() => {
-      img.style.transform = "translateY(-100px)";
-      img.style.opacity = "0";
-    }, 0);
-    setTimeout(() => {
-      img.remove();
-    }, 1000);
-
-    return img;
-  });
+  setTimeout(() => {
+    img.style.transform = "translateY(-100px)";
+    img.style.opacity = "0";
+  }, 0);
+  setTimeout(() => {
+    img.remove();
+  }, 1000);
 }
 </script>
 
@@ -70,7 +54,9 @@ function displayClickCharacters(x, y, speed) {
         <span> Nik name </span>
       </div>
       <div class="relative h-2 w-50 rounded-xl bg-grey-400 mb-7">
-        <div class="absolute top-0 left-0 w-1/3 h-full yellow-gradient rounded-xl"></div>
+        <div
+          class="absolute top-0 left-0 w-1/3 h-full yellow-gradient rounded-xl"
+        ></div>
         <img
           src="@/assets/img/star-top.png"
           class="absolute w-12 pb-2 transform -translate-y-1/2 -right-4 top-1/2"
@@ -79,7 +65,9 @@ function displayClickCharacters(x, y, speed) {
     </div>
     <div class="pt-2.5 bg-blue-900 grow rounded-t-3xl blue-shadow">
       <div class="flex flex-col h-full pt-4 bg-dark-200 rounded-t-3xl">
-        <div class="flex items-center justify-center gap-3 text-3xl font-semibold text-white mb-18">
+        <div
+          class="flex items-center justify-center gap-3 text-3xl font-semibold text-white mb-18"
+        >
           <img src="@/assets/img/coin-vpn.png" class="w-12" />
           <span>156 987</span>
         </div>
@@ -89,7 +77,7 @@ function displayClickCharacters(x, y, speed) {
             class="absolute z-10 rounded-full w-60 h-60 -top-10"
             @click="handleCardClick"
           >
-            <div class="w-full h-full rounded-full circle-out">
+            <div class="w-full h-full rounded-full">
               <img
                 src="@/assets/img/main-coin.png"
                 alt="Main Character"
@@ -102,7 +90,9 @@ function displayClickCharacters(x, y, speed) {
             src="@/assets/img/card.png"
             class="absolute top-0 left-0 w-screen -z-2"
           />
-          <div class="flex justify-between w-full px-5 pb-5 text-xl font-semibold text-white">
+          <div
+            class="flex justify-between w-full px-5 pb-5 text-xl font-semibold text-white"
+          >
             <div class="flex items-center gap-2">
               <img src="@/assets/img/thunder.png" class="w-8 h-auto" />
               <span> 2500/2500 </span>
@@ -117,7 +107,6 @@ function displayClickCharacters(x, y, speed) {
     </div>
   </div>
 </template>
-
 <style scoped>
 .circle-out {
   box-shadow: 0px 0px 15px 5px rgba(255, 195, 65, 0.5);
