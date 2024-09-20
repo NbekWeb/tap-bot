@@ -1,6 +1,8 @@
 <script setup>
 import Birja from "@/components/Birja.vue";
 import Friends from "@/components/Friends.vue";
+import Rating from "@/components/Rating.vue";
+
 import BirjaIcon from "./components/icons/birja.vue";
 import RateIcon from "./components/icons/rate.vue";
 import FriendsIcon from "./components/icons/friends.vue";
@@ -19,6 +21,7 @@ const changeTab = (i) => {
     <div class="overflow-y-auto min-h-con">
       <Birja class="" v-if="selected == 0" />
       <friends v-else-if="selected == 1" />
+      <rating v-else-if="selected == 3" />
     </div>
     <div
       class="flex items-center justify-between px-5 text-4xl bg-blue-600 min-h-25"
@@ -26,39 +29,34 @@ const changeTab = (i) => {
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(0)"
+        :class="selected !== 0 && 'opacity-25'"
       >
-        <birja-icon :class="selected !== 0 && 'opacity-25'" class="tr-03" />
+        <birja-icon class="tr-03" />
         <span class="text-lg">Биржа</span>
       </div>
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(1)"
+        :class="selected !== 1 ? 'opacity-25' : 'opacity-100'"
       >
-        <friends-icon
-          :class="selected !== 1 ? 'opacity-25' : 'opacity-100'"
-          class="tr-03"
-        />
+        <friends-icon class="tr-03" />
         <span class="text-lg">Друзья</span>
       </div>
 
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(2)"
+        :class="selected !== 2 ? 'opacity-25' : 'opacity-100'"
       >
-        <tasks-icon
-          :class="selected !== 2 ? 'opacity-25' : 'opacity-100'"
-          class="tr-03"
-        />
+        <tasks-icon class="tr-03" />
         <span class="text-lg">Задания</span>
       </div>
       <div
         class="flex flex-col items-center gap-1 text-white"
         @click="changeTab(3)"
+        :class="selected !== 3 ? 'opacity-25' : 'opacity-100'"
       >
-        <rate-icon
-          :class="selected !== 3 ? 'opacity-25' : 'opacity-100'"
-          class="tr-03"
-        />
+        <rate-icon class="tr-03" />
         <span class="text-lg">Рейтинг</span>
       </div>
     </div>

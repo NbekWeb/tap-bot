@@ -1,77 +1,35 @@
-<script setup></script>
 <template>
-  <div class="flex flex-col items-center px-5 pt-6">
-    <div class="flex justify-center">
-      <img src="@/assets/img/top-5.png" class="w-2/3 h-auto" />
-    </div>
-    <span class="mt-4 text-2xl text-white opacity-50"> 156 987 </span>
-    <div class="relative w-full h-2 mt-2 mb-6 rounded-xl bg-grey-400">
+  <div class="px-5 pt-10">
+    <div class="flex flex-col items-center gap-3 mb-4 text-center text-white">
+      <span class="text-2xl font-semibold">Приглашайте друзей!</span>
+      <span class="text-sm">Вы и ваш друг получите бонусы</span>
       <div
-        class="absolute top-0 left-0 w-1/3 h-full yellow-gradient rounded-xl"
-      ></div>
-    </div>
-    <div class="flex flex-col w-full gap-2 text-white">
-      <div
-        class="flex items-center justify-between w-full p-2 yellow-gradient rounded-2xl"
+        class="flex items-center justify-center h-10 gap-1 text-sm border-4 border-green-800 green-linear box-shadow-linear w-52 rounded-3xl"
       >
-        <div class="flex items-center gap-3">
-          <img src="@/assets/img/avatar-minion.png" class="w-14 h-14" />
-          <div>
-            <span class="text-xl"> Nik name </span>
-            <div class="flex items-center gap-1 text-sm">
-              <img src="@/assets/img/coin-vpn.png" class="w-4 h-4" />
-              <span class="opacity-50">1 079 890</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3 pr-2 text-center">
-          <span class="text-xl text-shadow-wrap">TOP 5</span>
-          <span class="text-3xl opacity-50">1</span>
-        </div>
+        <span>Пригласить друга</span>
+        <user />
       </div>
-      <div
-        class="flex items-center justify-between w-full p-2 bg-white-13 rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <img src="@/assets/img/avatar.png" class="w-14 h-14" />
-          <div>
-            <span class="text-xl"> Nik name </span>
-            <div class="flex items-center gap-1 text-sm">
-              <img src="@/assets/img/coin-vpn.png" class="w-4 h-4" />
-              <span class="opacity-50">1 000 890</span>
-            </div>
+    </div>
+    <div class="flex flex-col gap-2 text-white">
+      <div class="flex gap-8 p-3 bg-white-13 rounded-3xl">
+        <img src="@/assets/img/prize.png" class="w-10 " />
+        <div class="flex flex-col gap-1">
+          <span class="text-lg font-semibold">Пригласить друга</span>
+          <div class="flex gap-2 text-sm">
+            <img src="@/assets/img/coin-vpn.png" class="w-6 h-6" />
+            <span class="font-semibold">+ 5000 </span>
+            <span>для вас и вашего друга</span>
           </div>
-        </div>
-        <div class="flex items-center gap-3 pr-2 text-center">
-          <span class="text-3xl opacity-50">2</span>
-        </div>
-      </div>
-      <div
-        class="flex items-center justify-between w-full p-2 bg-white-13 rounded-2xl"
-        v-for="i of 10"
-        :key="i"
-      >
-        <div class="flex items-center gap-3">
-          <img src="@/assets/img/anonim.png" class="w-14 h-14" />
-          <div>
-            <span class="text-xl"> Nik name </span>
-            <div class="flex items-center gap-1 text-sm">
-              <img src="@/assets/img/coin-vpn.png" class="w-4 h-4" />
-              <span class="opacity-50">779 890</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-3 pr-2 text-center">
-          <span class="text-3xl opacity-50">{{ i + 2 }}</span>
         </div>
       </div>
     </div>
   </div>
 </template>
+<script setup>
+import user from "@/components/icons/user.vue";
+</script>
 <style scoped>
-.text-shadow-wrap {
-  text-shadow: 1px 1px 0 #feb934, /* Right bottom */ -1px -1px 0 #feb934,
-    /* Left top */ -1px 1px 0 #feb934, /* Left bottom */ 1px -1px 0 #feb934,
-    /* Right top */ 0 1px 0 #feb934, /* Bottom */ 0 -1px 0 #feb934; /* Top */
+.green-linear {
+  background: linear-gradient(90deg, #48e8a4 0%, #59b9c6 100%);
 }
 </style>
