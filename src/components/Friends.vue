@@ -4,7 +4,7 @@
       <span class="text-2xl font-semibold">Приглашайте друзей!</span>
       <span class="text-sm">Вы и ваш друг получите бонусы</span>
       <div
-        class="flex items-center justify-center h-10 gap-1 text-sm border-4 border-green-800 green-linear box-shadow-linear w-52 rounded-3xl"
+        class="flex items-center justify-center h-10 gap-1 text-sm border-4 border-green-800 green-linear box-shadow-linear w-52 rounded-3xl "
       >
         <span>Пригласить друга</span>
         <user />
