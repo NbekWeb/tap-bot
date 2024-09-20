@@ -1,0 +1,26 @@
+@import "./tailwind.css";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.main-bg {
+  background: linear-gradient(180deg, rgb(58, 64, 86), rgb(76, 83, 106) 100%);
+}
+.yellow-gradient {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 195, 65),
+    rgb(238, 123, 123) 100%
+  );
+}
+.blue-shadow {
+  box-shadow: 0px -8px 10px 0px rgba(155, 167, 210, 0.3);
+}
+/* @font-face {
+  font-family: 'Unbounded';
+  src: url('../font/Unbounded.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+} */
