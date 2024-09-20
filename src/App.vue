@@ -39,7 +39,7 @@ const changeTab = (i, j = 0) => {
       <rating v-else-if="selected == 5" />
     </div>
     <div
-      class="flex items-center justify-between px-5 text-4xl bg-blue-600 min-h-25"
+      class="flex items-center justify-between px-5 text-4xl bg-blue-600 min-h-20"
     >
       <div
         class="flex flex-col items-center gap-1 text-white"
@@ -83,10 +83,10 @@ const changeTab = (i, j = 0) => {
 </template>
 <style scoped>
 .h-con {
-  height: calc(100vh - 100px);
+  height: calc(100vh - 80px);
 }
 .min-h-con {
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 80px);
 }
 .tr-03 {
   transition: all 0.3s ease;
