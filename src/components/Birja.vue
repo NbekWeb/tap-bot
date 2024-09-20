@@ -77,7 +77,7 @@ function handleCardClick(e) {
             class="absolute z-10 rounded-full w-60 h-60 circle-out -top-10 bg-coin"
             @click="handleCardClick"
           >
-            <div class="w-full h-full border rounded-full ">
+            <div class="w-full h-full rounded-full ">
               <img
                 src="@/assets/img/main-coin.png"
                 alt="Main Character"
