@@ -42,7 +42,7 @@ const changeTab = (i, j = 0) => {
       class="flex items-center justify-between px-5 text-4xl bg-blue-600 min-h-20"
     >
       <div
-        class="flex flex-col items-center gap-1 text-white"
+        class="flex flex-col items-center text-white"
         @click="changeTab(0)"
         :class="selected !== 0 && 'opacity-25'"
       >
@@ -50,7 +50,7 @@ const changeTab = (i, j = 0) => {
         <span class="text-lg">Биржа</span>
       </div>
       <div
-        class="flex flex-col items-center gap-1 text-white"
+        class="flex flex-col items-center text-white"
         @click="changeTab(1, 1)"
         :class="
           selected !== 1 && selected != 2 && selected != 3
@@ -63,7 +63,7 @@ const changeTab = (i, j = 0) => {
       </div>
 
       <div
-        class="flex flex-col items-center gap-1 text-white"
+        class="flex flex-col items-center text-white"
         @click="changeTab(4)"
         :class="selected !== 4 ? 'opacity-25' : 'opacity-100'"
       >
@@ -71,7 +71,7 @@ const changeTab = (i, j = 0) => {
         <span class="text-lg">Задания</span>
       </div>
       <div
-        class="flex flex-col items-center gap-1 text-white"
+        class="flex flex-col items-center text-white"
         @click="changeTab(5)"
         :class="selected !== 5 ? 'opacity-25' : 'opacity-100'"
       >
