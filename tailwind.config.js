@@ -7,6 +7,7 @@ export default {
       spacing: {
         84: "440px",
         25: "100px",
+        18:'72px',
         50:'200px'
       },
       colors: {

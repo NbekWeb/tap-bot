@@ -18,10 +18,10 @@ const changeTab = (i) => {
       <Birja  class=""/>
     </div>
     <div
-      class="flex items-center justify-between px-5 text-5xl bg-blue-600 h-25"
+      class="flex items-center justify-between px-5 text-4xl bg-blue-600 h-25"
     >
       <div
-        class="flex flex-col items-center text-white"
+        class="flex flex-col items-center gap-1 text-white"
        
         @click="changeTab(0)"
       >
@@ -29,7 +29,7 @@ const changeTab = (i) => {
         <span class="text-xl">Биржа</span>
       </div>
       <div
-        class="flex flex-col items-center text-white"
+        class="flex flex-col items-center gap-1 text-white"
         
         @click="changeTab(1)"
       >
@@ -38,7 +38,7 @@ const changeTab = (i) => {
       </div>
 
       <div
-        class="flex flex-col items-center text-white"
+        class="flex flex-col items-center gap-1 text-white"
       
         @click="changeTab(2)"
       >
@@ -46,7 +46,7 @@ const changeTab = (i) => {
         <span class="text-xl">Задания</span>
       </div>
       <div
-        class="flex flex-col items-center text-white"
+        class="flex flex-col items-center gap-1 text-white"
        
         @click="changeTab(3)"
       >
