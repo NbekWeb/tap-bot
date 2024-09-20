@@ -2,6 +2,7 @@
 import Birja from "@/components/Birja.vue";
 import Friends from "@/components/Friends.vue";
 import Rating from "@/components/Rating.vue";
+import Tasks from "@/components/Tasks.vue";
 
 import BirjaIcon from "./components/icons/birja.vue";
 import RateIcon from "./components/icons/rate.vue";
@@ -21,6 +22,7 @@ const changeTab = (i) => {
     <div class="overflow-y-auto min-h-con">
       <Birja class="" v-if="selected == 0" />
       <friends v-else-if="selected == 1" />
+      <tasks v-else-if="selected == 2" />
       <rating v-else-if="selected == 3" />
     </div>
     <div
