@@ -74,10 +74,10 @@ function handleCardClick(e) {
 
         <div class="relative flex items-end justify-center grow">
           <div
-            class="absolute z-10 rounded-full w-60 h-60 circle-outer -top-10 bg-coin"
+            class="absolute z-10 rounded-full w-60 h-60 circle-out -top-10 bg-coin"
             @click="handleCardClick"
           >
-            <div class="w-full h-full rounded-full circle-out">
+            <div class="w-full h-full border rounded-full ">
               <img
                 src="@/assets/img/main-coin.png"
                 alt="Main Character"
