@@ -39,7 +39,7 @@ function displayClickCharacters(x, y, speed) {
     img.src = mainCharacter;
     img.style.position = "absolute";
     img.style.left = `${x + (index - Math.floor(speed / 2)) * 20}px`;
-    img.style.top = `${y - 25}px`;
+    img.style.top = `${y - 10}px`;
     img.style.width = "20px"; 
     img.style.height = "auto";
     img.style.transition = "transform 1s ease-in-out, opacity 1s ease-in-out";
